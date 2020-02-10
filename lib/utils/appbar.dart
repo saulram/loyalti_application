@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:loyalti_application/providers/appbar.provider.dart';
+import 'package:provider/provider.dart';
 
 class AppBarFloating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MediaQueryData screen = MediaQuery.of(context);
+
+    var appbarindex = Provider.of<AppBarProvider>(context);
     return Positioned(
       bottom: screen.size.height * .02,
       left: screen.size.width * .05,
       right: screen.size.width * .05,
-      child: Card(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(screen.size.height * .04),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black54,
+              blurRadius: 10,
+              spreadRadius: 1,
+            )
+          ],
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -21,11 +36,20 @@ class AppBarFloating extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       IconButton(
-                        icon: Icon(LineIcons.home),
-                        onPressed: () {},
+                        icon: Icon(
+                          LineIcons.home,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          appbarindex.setindex(0);
+                        },
                         tooltip: 'Home',
                       ),
-                      Text('Home')
+                      Text(
+                        'Home',
+                        style:
+                            TextStyle(color: Colors.white, fontFamily: 'Open'),
+                      )
                     ],
                   )),
               Expanded(
@@ -33,10 +57,17 @@ class AppBarFloating extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       IconButton(
-                        icon: Icon(LineIcons.globe),
-                        onPressed: () {},
+                        icon: Icon(
+                          LineIcons.globe,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          appbarindex.setindex(1);
+                        },
                       ),
-                      Text('News')
+                      Text('News',
+                          style: TextStyle(
+                              color: Colors.white, fontFamily: 'Open'))
                     ],
                   )),
               Expanded(
@@ -44,10 +75,17 @@ class AppBarFloating extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(LineIcons.gift),
-                      onPressed: () {},
+                      icon: Icon(
+                        LineIcons.gift,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        appbarindex.setindex(2);
+                      },
                     ),
-                    Text('Promociones')
+                    Text('Promociones',
+                        style:
+                            TextStyle(color: Colors.white, fontFamily: 'Open'))
                   ],
                 ),
               ),
