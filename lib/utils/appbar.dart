@@ -36,10 +36,10 @@ class AppBarFloating extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       IconButton(
-                        icon: Icon(
-                          LineIcons.home,
-                          color: Colors.white,
-                        ),
+                        icon: Icon(LineIcons.home,
+                            color: appbarindex.getIndex() == 0
+                                ? Colors.red
+                                : Colors.white),
                         onPressed: () {
                           appbarindex.setindex(0);
                         },
@@ -47,8 +47,11 @@ class AppBarFloating extends StatelessWidget {
                       ),
                       Text(
                         'Home',
-                        style:
-                            TextStyle(color: Colors.white, fontFamily: 'Open'),
+                        style: TextStyle(
+                            color: appbarindex.getIndex() == 0
+                                ? Colors.red
+                                : Colors.white,
+                            fontFamily: 'Open'),
                       )
                     ],
                   )),
@@ -58,16 +61,21 @@ class AppBarFloating extends StatelessWidget {
                     children: <Widget>[
                       IconButton(
                         icon: Icon(
-                          LineIcons.globe,
-                          color: Colors.white,
+                          LineIcons.shopping_cart,
+                          color: appbarindex.getIndex() == 1
+                              ? Colors.red
+                              : Colors.white,
                         ),
                         onPressed: () {
                           appbarindex.setindex(1);
                         },
                       ),
-                      Text('News',
+                      Text('Ecommerce',
                           style: TextStyle(
-                              color: Colors.white, fontFamily: 'Open'))
+                              color: appbarindex.getIndex() == 1
+                                  ? Colors.red
+                                  : Colors.white,
+                              fontFamily: 'Open'))
                     ],
                   )),
               Expanded(
@@ -76,16 +84,20 @@ class AppBarFloating extends StatelessWidget {
                   children: <Widget>[
                     IconButton(
                       icon: Icon(
-                        LineIcons.gift,
-                        color: Colors.white,
+                        LineIcons.user,
+                        color: appbarindex.getIndex() == 2
+                            ? Colors.red
+                            : Colors.white,
                       ),
                       onPressed: () {
                         appbarindex.setindex(2);
                       },
                     ),
-                    Text('Promociones',
+                    Text('Perfil',
                         style:
-                            TextStyle(color: Colors.white, fontFamily: 'Open'))
+                            TextStyle(color:  appbarindex.getIndex() == 2
+                                ? Colors.red
+                                : Colors.white, fontFamily: 'Open'))
                   ],
                 ),
               ),
