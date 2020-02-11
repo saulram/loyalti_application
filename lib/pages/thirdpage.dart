@@ -16,7 +16,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
           padding: EdgeInsets.only(top: screen.size.height * .1),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://avatarfiles.alphacoders.com/179/179031.jpg'),
+                'https://image.tmdb.org/t/p/original/hErUwonrQgY5Y7RfxOfv8Fq11MB.jpg'),
             radius: screen.size.width * .2,
           ),
         ),
