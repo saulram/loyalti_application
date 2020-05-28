@@ -27,6 +27,7 @@ dependencies:
   provider: ^4.0.3
   webview_flutter: ^0.3.19+6
   qr_flutter:
+  flip_card: ^0.4.4
 
 dev_dependencies:
   flutter_test:

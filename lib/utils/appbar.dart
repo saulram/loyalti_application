@@ -15,7 +15,7 @@ class AppBarFloating extends StatelessWidget {
       right: screen.size.width * .05,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.grey[900],
           borderRadius: BorderRadius.circular(screen.size.height * .04),
           boxShadow: [
             BoxShadow(
